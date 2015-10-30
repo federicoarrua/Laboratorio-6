@@ -1,0 +1,16 @@
+<h1>Listado de victimas</h1>
+<table class="table">
+	<tr>
+		<th>Nombre</th>
+		<th>Edad</th>
+		<th>Monstruo</th>
+	</tr
+	<% Victima.all.each do |victima| %>
+		<tr>
+			<td><%= victima.nombre %></td>
+			<td><%= victima.edad %></td>
+			<% monstruo=Monstruo.find(victima.monstruo_id) %>
+			<td><%= link_to monstruo.nombre, monstruo %></td>
+		</tr>
+	<% end %>
+</table>
